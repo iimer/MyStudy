@@ -1,0 +1,126 @@
+
+
+
+public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
+	//调用构造函数
+	this();
+	//注册我们的配置类
+	register(componentClasses);
+	//IOC容器刷新接口
+	refresh();
+}
+
+	this()点进去
+		this.reader = new AnnotatedBeanDefinitionReader(this);
+		跟到AnnotatedBeanDefinitionReader，出现：
+			将起始的PostProcessor变成BeanDefinition注册到BeanDefinitionMap：AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
+			如：ConfigurationClassPostProcessor extends BeanDefinitionRegistryPostProcessor(extends BeanFactoryPostProcessor),PriorityOrdered(extends Ordered)
+				AutowiredAnnotationBeanPostProcessor
+				CommonAnnotationBeanPostProcessor
+				PersistenceAnnotationBeanPostProcessor
+				EventListenerMethodProcessor
+				DefaultEventListenerFactory（都是用来解析注解）
+			registry就是AnnotationConfigApplicationContext，又交给了AnnotatedBeanDefinitionReader来当成员变量实现注册
+			
+		this.scanner = new ClassPathBeanDefinitionScanner(this);
+			用来给程序员手动AnnotationConfigApplicationContext的scan方法，不是spring默认的扫描对象
+	register(componentClasses);
+		用来注册@Configuration注解的类到BeanDefinitionMap
+	refresh()
+		@Override
+		public void refresh() throws BeansException, IllegalStateException {
+			synchronized (this.startupShutdownMonitor) {
+				StartupStep contextRefresh = this.applicationStartup.start("spring.context.refresh");
+
+				// 声明早期的监听器和事件，不需要手动发布
+				prepareRefresh();
+
+				// 获取初始化Bean工厂
+				ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
+			
+				// 对Bean工厂填充属性,忽略一些类，注册一些类，注册解析接口方式的监听器的BeanPostProcessor
+				prepareBeanFactory(beanFactory);
+
+				try {
+					// Allows post-processing of the bean factory in context subclasses.
+					postProcessBeanFactory(beanFactory);
+
+					StartupStep beanPostProcess = this.applicationStartup.start("spring.context.beans.post-process");
+					// Invoke factory processors registered as beans in the context.
+					//调用实现了BeanFactory的后置处理器
+					invokeBeanFactoryPostProcessors(beanFactory);
+
+					// Register bean processors that intercept bean creation.
+					registerBeanPostProcessors(beanFactory);
+					beanPostProcess.end();
+					//国际化资源
+					// Initialize message source for this context.
+					initMessageSource();
+					
+					//创建事件多播器，将之前的事件注册进去，用来管控所有的监听器
+					// Initialize event multicaster for this context.
+					initApplicationEventMulticaster();
+					
+					// Initialize other special beans in specific context subclasses.
+					onRefresh();
+					
+					//将接口实现的监听器名字注册到多播器，并自动发布早期事件，并清空早期事件
+					//自己实现的监听器都是在初始化后才真正注册到多播器的
+					// Check for listener beans and register them.
+					registerListeners();
+
+					// Instantiate all remaining (non-lazy-init) singletons.
+					finishBeanFactoryInitialization(beanFactory);
+
+					// Last step: publish corresponding event.
+					finishRefresh();
+				}
+
+				catch (BeansException ex) {
+					if (logger.isWarnEnabled()) {
+						logger.warn("Exception encountered during context initialization - " +
+								"cancelling refresh attempt: " + ex);
+					}
+
+					// Destroy already created singletons to avoid dangling resources.
+					destroyBeans();
+
+					// Reset 'active' flag.
+					cancelRefresh(ex);
+
+					// Propagate exception to caller.
+					throw ex;
+				}
+
+				finally {
+					// Reset common introspection caches in Spring's core, since we
+					// might not ever need metadata for singleton beans anymore...
+					resetCommonCaches();
+					contextRefresh.end();
+				}
+			}
+		}
+		invokeBeanFactoryPostProcessors(beanFactory);
+			PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());
+				getBeanFactoryPostProcessors()是自己添加的，不添加个数就为0
+					//调用所有实现了1、BeanDefinitionRegistryPostProcessor
+									2、BeanFactoryPostProcessor
+					//调用顺序：BeanDefinitionRegistryPostProcessor：
+									1、实现了PriorityOrdered的，按照order值顺序执行，排除
+									2、实现了Ordered的，按照order值顺序执行，排除
+									3、没有实现任何Ordered的，排除
+									4、调用之前所有实现BeanDefinitionRegistryPostProcessor的BeanFactoryPostProcessor的回调方法，包括自己添加的。此处ConfigurationClassPostProcessor给加了@Configuration的@Bean生成动态代理类
+									   再调用自己添加的只实现了BeanFactoryPostProcessor的回调方法
+									上面的都包括自己的+内置的。每一步beanFatory把这些实现了接口的实例化，getBean(ppName, BeanDefinitionRegistryPostProcessor.class。
+				第一个调用：ConfigurationClassPostProcessor的实现了BeanDefinitionRegistryPostProcessor的方法
+					1)给加了@Configuration注解的类添加full标记
+					2)new ConfigurationClassParser类对所有加了full标记的进行判断有无@Properties、@ComponentScan、@Import、@ImportResource、@Bean的方法
+					3)针对@ComponentScan（只有这个在这里就完成了注册）：
+						使用ComponentScanAnnotationParser类的parse方法将这个注解的属性取出来存到ClassPathBeanDefinitionScanner类对应的对象scanner中。
+						注意：默认的一个排除在外的：@Configuration的类，默认三个在内的：@Component注解的，和2个jdk的
+						scanner调用doScan开始真正的扫描。
+						转换包名为/+.class结尾的并扫描所有的包，设置可用的类的默认属性或者自己加的注解的属性返回回去
+						注册到BeanDefinationMap中
+					4)针对@Import：循环解析全类名到一个独立的map、如果有configuration的就再递归调用上面的
+					注意：@Import、@Bean是在ConfigurationClassParser类解析完全部的之后，使用loadBeanDefinitions()才真正的注册到BeanDefinitionMap中。也就是说会覆盖一样名字的
+					
