@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/二分查找/二分查找.iml" filepath="$PROJECT_DIR$/二分查找/二分查找.iml" />
+      <module fileurl="file://$PROJECT_DIR$/二叉树/二叉树.iml" filepath="$PROJECT_DIR$/二叉树/二叉树.iml" />
+      <module fileurl="file://$PROJECT_DIR$/剑指offer/剑指offer.iml" filepath="$PROJECT_DIR$/剑指offer/剑指offer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/动态规划/动态规划.iml" filepath="$PROJECT_DIR$/动态规划/动态规划.iml" />
+      <module fileurl="file://$PROJECT_DIR$/回溯/回溯.iml" filepath="$PROJECT_DIR$/回溯/回溯.iml" />
+      <module fileurl="file://$PROJECT_DIR$/回溯算法/回溯算法.iml" filepath="$PROJECT_DIR$/回溯算法/回溯算法.iml" />
+      <module fileurl="file://$PROJECT_DIR$/字符串/字符串.iml" filepath="$PROJECT_DIR$/字符串/字符串.iml" />
+      <module fileurl="file://$PROJECT_DIR$/广搜/广搜.iml" filepath="$PROJECT_DIR$/广搜/广搜.iml" />
+      <module fileurl="file://$PROJECT_DIR$/战队赛/战队赛.iml" filepath="$PROJECT_DIR$/战队赛/战队赛.iml" />
+      <module fileurl="file://$PROJECT_DIR$/数/数.iml" filepath="$PROJECT_DIR$/数/数.iml" />
+      <module fileurl="file://$PROJECT_DIR$/日期类/日期类.iml" filepath="$PROJECT_DIR$/日期类/日期类.iml" />
+      <module fileurl="file://$PROJECT_DIR$/机制算法/机制算法.iml" filepath="$PROJECT_DIR$/机制算法/机制算法.iml" />
+      <module fileurl="file://$PROJECT_DIR$/每日一题/每日一题.iml" filepath="$PROJECT_DIR$/每日一题/每日一题.iml" />
+      <module fileurl="file://$PROJECT_DIR$/深搜/深搜.iml" filepath="$PROJECT_DIR$/深搜/深搜.iml" />
+      <module fileurl="file://$PROJECT_DIR$/热100/热100.iml" filepath="$PROJECT_DIR$/热100/热100.iml" />
+      <module fileurl="file://$PROJECT_DIR$/竞赛/竞赛.iml" filepath="$PROJECT_DIR$/竞赛/竞赛.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/算法.iml" filepath="$PROJECT_DIR$/.idea/算法.iml" />
+      <module fileurl="file://$PROJECT_DIR$/输入输出/输入输出.iml" filepath="$PROJECT_DIR$/输入输出/输入输出.iml" />
+      <module fileurl="file://$PROJECT_DIR$/递归/递归.iml" filepath="$PROJECT_DIR$/递归/递归.iml" />
+    </modules>
+  </component>
+</project>

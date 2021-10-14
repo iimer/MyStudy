@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClassLoaderTest/ClassLoaderTest.iml" filepath="$PROJECT_DIR$/ClassLoaderTest/ClassLoaderTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first/first.iml" filepath="$PROJECT_DIR$/first/first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/反射练习.iml" filepath="$PROJECT_DIR$/反射练习.iml" />
+      <module fileurl="file://$PROJECT_DIR$/对Class实例的结构操作/对Class实例的结构操作.iml" filepath="$PROJECT_DIR$/对Class实例的结构操作/对Class实例的结构操作.iml" />
+      <module fileurl="file://$PROJECT_DIR$/得到运行时类的对象/得到运行时类的对象.iml" filepath="$PROJECT_DIR$/得到运行时类的对象/得到运行时类的对象.iml" />
+      <module fileurl="file://$PROJECT_DIR$/得到运行时类的所有结构/得到运行时类的所有结构.iml" filepath="$PROJECT_DIR$/得到运行时类的所有结构/得到运行时类的所有结构.iml" />
+    </modules>
+  </component>
+</project>

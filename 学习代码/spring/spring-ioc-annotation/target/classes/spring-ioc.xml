@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--
+@Controller  标记在控制层的类注册为Bean主键
+@Service     标记在业务逻辑层的类注册为Bean主键
+@Repository  标记在数据访问层的类注册为Bean主键
+@Component   标记在非三层的普通的类注册为Bean主键
+
+不是非要每个层对应相应的注释：1.增强可读性
+                          2.利于spring管理，如排除掉某一层面的扫描
+
+                          名字默认 为 类名首字母小写后的名字
+-->
+<!--    <bean class="com.qgy.controller.UserController" id="userController"/>-->
+
+
+<!--
+扫描包
+base-package:设置需要扫描的包
+   排除扫描：<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+   包含扫描：<context:include-filter 设置需要包含扫描的选项/>
+   type: 1.annotation 默认 根据注解的完整限定名设置排除/包括
+         2.assignable 根据类的完整限定名设置排除/包括
+         3.aspect 根据切面表达式设置排除/包括
+         4.regex 根据正则表达式设置排除/包括
+         5.custom 根据接口设置排除/包括
+   user-default-filters:默认true，否则都不会扫描
+-->
+    <context:property-placeholder location="db.properties" ></context:property-placeholder>
+
+    <context:component-scan base-package="com.qgy">
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    </context:component-scan>
+
+</beans>

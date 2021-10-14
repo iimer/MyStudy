@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ch03-inmemory-role" />
+        <module name="ch06-jdbcUserDetailsService" />
+        <module name="ch04-jdbc" />
+        <module name="ch01-first" />
+        <module name="ch02-inmemory" />
+        <module name="ch05-memUserDe" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ch01-first" target="1.5" />
+      <module name="ch02-inmemory" target="1.5" />
+      <module name="ch03-inmemory-role" target="1.5" />
+      <module name="ch04-jdbc" target="1.7" />
+      <module name="ch05-memUserDe" target="1.8" />
+      <module name="ch06-jdbcUserDetailsService" target="1.8" />
+      <module name="ch06-jdbcUserDetailsService (1)" target="1.8" />
+      <module name="ch06-jdbcUserDetailsService (2)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

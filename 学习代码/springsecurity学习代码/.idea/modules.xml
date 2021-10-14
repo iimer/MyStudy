@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/securitydemo/ch01-first/ch01-first.iml" filepath="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/securitydemo/ch01-first/ch01-first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/securitydemo/ch02-inmemory/ch02-inmemory.iml" filepath="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/securitydemo/ch02-inmemory/ch02-inmemory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch03-inmemory-role/ch03-inmemory-role.iml" filepath="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch03-inmemory-role/ch03-inmemory-role.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch04-jdbc/ch04-jdbc.iml" filepath="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch04-jdbc/ch04-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch05-memUserDe/ch05-memUserDe.iml" filepath="$PROJECT_DIR$/ch05-memUserDe/ch05-memUserDe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（二）/课程源码/ch06-jdbcUserDetailsService/ch06-jdbcUserDetailsService.iml" filepath="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（二）/课程源码/ch06-jdbcUserDetailsService/ch06-jdbcUserDetailsService.iml" />
+    </modules>
+  </component>
+</project>

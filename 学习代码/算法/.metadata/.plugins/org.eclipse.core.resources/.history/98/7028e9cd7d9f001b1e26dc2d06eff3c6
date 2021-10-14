@@ -1,0 +1,18 @@
+package dsf;
+
+import java.util.List;
+
+import org.junit.Test;
+
+import java.util.ArrayList;
+
+public class dsf {
+	public static void main(String[] args) {
+		System.out.println(213);
+	}
+	@Test
+	public void name() {
+		double s= 0.3/2;
+		System.out.println(s);
+	}
+}

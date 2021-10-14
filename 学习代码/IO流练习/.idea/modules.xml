@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Buffered/Buffered.iml" filepath="$PROJECT_DIR$/Buffered/Buffered.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataInputOutputStream/DataInputOutputStream.iml" filepath="$PROJECT_DIR$/DataInputOutputStream/DataInputOutputStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IO流练习.iml" filepath="$PROJECT_DIR$/IO流练习.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InputOutputStreamReaderWriter/InputOutputStreamReaderWriter.iml" filepath="$PROJECT_DIR$/InputOutputStreamReaderWriter/InputOutputStreamReaderWriter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InputOutputStreamTest/InputOutputStreamTest.iml" filepath="$PROJECT_DIR$/InputOutputStreamTest/InputOutputStreamTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ObjectInputOutputStream/ObjectInputOutputStream.iml" filepath="$PROJECT_DIR$/ObjectInputOutputStream/ObjectInputOutputStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrintStreamTest/PrintStreamTest.iml" filepath="$PROJECT_DIR$/PrintStreamTest/PrintStreamTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RandomAccessFile/RandomAccessFile.iml" filepath="$PROJECT_DIR$/RandomAccessFile/RandomAccessFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReaderWriter/ReaderWriter.iml" filepath="$PROJECT_DIR$/ReaderWriter/ReaderWriter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SystemIn/SystemIn.iml" filepath="$PROJECT_DIR$/SystemIn/SystemIn.iml" />
+    </modules>
+  </component>
+</project>

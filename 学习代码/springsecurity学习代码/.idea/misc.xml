@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch04-jdbc" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/securitydemo/ch01-first/pom.xml" />
+        <option value="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/securitydemo/ch02-inmemory/pom.xml" />
+        <option value="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch03-inmemory-role/pom.xml" />
+        <option value="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（一）/课程源码/ch04-jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（二）/课程源码/ch06-jdbcUserDetailsService/pom.xml" />
+        <option value="$PROJECT_DIR$/ch05-memUserDe/pom.xml" />
+        <option value="$PROJECT_DIR$/../安全框架security/细说Spring Security安全框架（二）/课程源码/ch06-jdbcUserDetailsService/pom(1).xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
